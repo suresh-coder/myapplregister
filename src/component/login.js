@@ -17,14 +17,14 @@ export default function Login() {
     let history = useHistory();
 
     // get functions to build form with useForm() hook
-    const { register, handleSubmit,reset, formState } = useForm(formOptions);
+    const { register, handleSubmit, reset, formState } = useForm(formOptions);
     const { errors } = formState;
 
     function onSubmit(data) {
         // display form data on success
-        if (data.email === "abc@gmail.com" && data.password === "abc") {
+        if (data.email.toString().toUpperCase() === "ABC@GMAIL.COM" && data.password === "abc") {
             history.push('/dashboard')
-        }else{
+        } else {
             alert('Invalid email and password.')
             reset()
         }
@@ -36,7 +36,7 @@ export default function Login() {
     }
 
     return (
-        <div className="card m-3" style={{ width: 650, textAlign: "center" }}>
+        <div className="card m-3" style={{ textAlign: "center" }}>
             <h5 className="card-header">Log In</h5>
             <div className="card-body">
                 <form onSubmit={handleSubmit(onSubmit)}>

@@ -46,7 +46,7 @@ export default function Register() {
     }
 
     return (
-        <div className="card m-3" style={{ width: 650, textAlign: "center" }}>
+        <div className="card m-3" style={{ textAlign: "center" }}>
             <h5 className="card-header">User Registration </h5>
 
             <div className="card-body">
