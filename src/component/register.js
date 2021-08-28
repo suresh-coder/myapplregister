@@ -76,15 +76,13 @@ export default function Register() {
 
                     </div>
                     <div className="form-row">
-                        <div className="form-group col-5">
+                        <div className="form-group">
                             <label>Gender</label>
 
                             <span className="radio-span">Male</span>
                             <input name="gender" type="radio" value={0} {...register('gender')} id="genderMale" className={`form-check-input ${errors.gender ? 'is-invalid' : ''}`} />
                             <span className="radio-span">Female</span>
                             <input name="gender" type="radio" value={1} {...register('gender')} id="genderFemale" className={`form-check-input ${errors.gender ? 'is-invalid' : ''}`} />
-
-
                             <div className="invalid-feedback">{errors.gender?.message}</div>
                         </div>
 
