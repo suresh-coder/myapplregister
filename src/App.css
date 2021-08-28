@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -35,4 +35,43 @@
   to {
     transform: rotate(360deg);
   }
+}
+label{
+  float:left;
+}
+
+.label-radio {display: block; padding: 5px; position: relative; padding-left: 20px;    padding-left: 50px;
+  margin: -5px;}
+.is-invalid~.invalid-feedback, .is-invalid~.invalid-tooltip, .was-validated :invalid~.invalid-feedback, .was-validated :invalid~.invalid-tooltip {    
+    text-align: left;
+}
+.radio-span{
+  padding-left: 10px;
+  padding-right: 25px;
+}
+
+.content-div{
+  float: left;
+  padding: 10px;
+}
+.content-span{
+  padding-left: 10px;
+    font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #dddddd;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  padding: 8px;
 }
