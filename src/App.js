@@ -7,7 +7,7 @@ import Dashboard from './component/dashboard.js';
 import {
   BrowserRouter as Router,
   Switch,
-  Route  
+  Route
 } from 'react-router-dom';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-       
+
         <Switch>
           <Route path='/' component={Login} exact />
           <Route path='/register' component={Register} />

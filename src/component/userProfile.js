@@ -19,7 +19,7 @@ export default function UserProfile() {
         <>
             <Links />
 
-            <div className="card m-3" style={{ width: 650, textAlign: "center" }}>
+            <div className="card m-3" style={{ textAlign: "center" }}>
                 <h5 className="card-header">My profile </h5>
                 <div className="card-body">
                     {typeof userData !== 'undefined' && userData !== null ?
