@@ -1,12 +1,12 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { yupResolver } from '@hookform/resolvers/yup';
+import { yupResolver } from '@hookform/resolvers';
 import * as Yup from 'yup';
 import { useHistory } from "react-router-dom";
 
 export default function Register() {
 
-    const username = /^[a-z0-9]+$/i
+    const username = /^[a-z0-9\s]+$/i
     const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
     // Registration form validation
@@ -54,14 +54,14 @@ export default function Register() {
                     <div className="form-row">
                         <div className="form-group col">
                             <label>User Name</label>
-                            <input name="userName" type="text" {...register('userName')} className={`form-control ${errors.userName ? 'is-invalid' : ''}`} />
+                            <input name="userName" type="text" ref={register} className={`form-control ${errors.userName ? 'is-invalid' : ''}`} />
                             <div className="invalid-feedback">{errors.userName?.message}</div>
                         </div>
                     </div>
                     <div className="form-row">
                         <div className="form-group col">
                             <label>Email Address</label>
-                            <input name="email" type="text" {...register('email')} className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
+                            <input name="email" type="text" ref={register}  className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
                             <div className="invalid-feedback">{errors.email?.message}</div>
                         </div>
 
@@ -70,7 +70,7 @@ export default function Register() {
                     <div className="form-row">
                         <div className="form-group col">
                             <label>Contact Number</label>
-                            <input name="contactNumber" type="text" {...register('contactNumber')} className={`form-control ${errors.contactNumber ? 'is-invalid' : ''}`} />
+                            <input name="contactNumber" type="text" ref={register}  className={`form-control ${errors.contactNumber ? 'is-invalid' : ''}`} />
                             <div className="invalid-feedback">{errors.contactNumber?.message}</div>
                         </div>
 
@@ -80,9 +80,9 @@ export default function Register() {
                             <label>Gender</label>
 
                             <span className="radio-span">Male</span>
-                            <input name="gender" type="radio" value={0} {...register('gender')} id="genderMale" className={`form-check-input ${errors.gender ? 'is-invalid' : ''}`} />
+                            <input name="gender" type="radio" value={0} ref={register}  id="genderMale" className={`form-check-input ${errors.gender ? 'is-invalid' : ''}`} />
                             <span className="radio-span">Female</span>
-                            <input name="gender" type="radio" value={1} {...register('gender')} id="genderFemale" className={`form-check-input ${errors.gender ? 'is-invalid' : ''}`} />
+                            <input name="gender" type="radio" value={1} ref={register}  id="genderFemale" className={`form-check-input ${errors.gender ? 'is-invalid' : ''}`} />
                             <div className="invalid-feedback">{errors.gender?.message}</div>
                         </div>
 
@@ -91,7 +91,7 @@ export default function Register() {
                     <div className="form-row">
                         <div className="form-group col">
                             <label>Password</label>
-                            <input name="password" type="password" {...register('password')} className={`form-control ${errors.password ? 'is-invalid' : ''}`} />
+                            <input name="password" type="password" ref={register}  className={`form-control ${errors.password ? 'is-invalid' : ''}`} />
                             <div className="invalid-feedback">{errors.password?.message}</div>
                         </div>
                     </div>

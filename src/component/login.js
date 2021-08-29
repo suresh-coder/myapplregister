@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { yupResolver } from '@hookform/resolvers/yup';
+import { yupResolver } from '@hookform/resolvers';
 import * as Yup from 'yup';
 import { useHistory } from "react-router-dom";
 
@@ -11,7 +11,7 @@ export default function Login() {
             .required('Email is required')
             .email('Email is invalid'),
         password: Yup.string()
-            .required('passsord is required')
+            .required('password is required')
     });
     const formOptions = { resolver: yupResolver(validationSchema) };
     let history = useHistory();
@@ -43,7 +43,7 @@ export default function Login() {
                     <div className="form-row">
                         <div className="form-group col">
                             <label>Email Address</label>
-                            <input name="email" type="text" {...register('email')} className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
+                            <input name="email" type="text" ref={register} className={`form-control ${errors.email ? 'is-invalid' : ''}`} />
                             <div className="invalid-feedback">{errors.email?.message}</div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@ export default function Login() {
                     <div className="form-row">
                         <div className="form-group col">
                             <label>Password</label>
-                            <input name="password" type="password" {...register('password')} className={`form-control ${errors.password ? 'is-invalid' : ''}`} />
+                            <input name="password" type="password" ref={register} className={`form-control ${errors.password ? 'is-invalid' : ''}`} />
                             <div className="invalid-feedback">{errors.password?.message}</div>
                         </div>
                     </div>
